@@ -1,4 +1,10 @@
+import { useEffect, useState } from "react"
+import getCurrentDate from "../funcs/getCurrentDate";
+
 export default function AddKridi() {
+  const [date, setDate] = useState(getCurrentDate());
+
+
   return (
     <div className="">
       <h2 className="text-lg font-medium my-2 mt-6">Ajouter un Kridi</h2>
@@ -6,7 +12,7 @@ export default function AddKridi() {
       <form action="">
         <div className="grid grid-cols-[1fr_auto_auto] grid-rows-1 gap-2">
           <div>
-            <label htmlFor="name" className="block text-sm text-gray-700">Nom de Kridi</label>
+            <label htmlFor="name" className="block text-sm text-gray-700">Nom du Produit</label>
             <input type="text" id="name" className="input w-full" />
           </div>
 
@@ -23,12 +29,12 @@ export default function AddKridi() {
 
         <div className="grid grid-cols-[1fr_1fr] grid-rows-1 gap-2 my-2">
           <div>
-            <label htmlFor="name" className="block text-sm text-gray-700">Nom de Kridi</label>
-            <input type="date" id="name" className="input w-full" />
+            <label htmlFor="name" className="block text-sm text-gray-700">Date du Kridi</label>
+            <input type="date" id="name" className="input w-full" value={date} onChange={e => setDate(e.target.value)} />
           </div>
 
           <div>
-            <label htmlFor="name" className="block text-sm text-gray-700">Nom Client</label>
+            <label htmlFor="name" className="block text-sm text-gray-700">Client</label>
             <select name="clients" id="clients" className="input w-full">
               <option value="1">Ait 7med</option>
               <option value="2">Ait Mo7emad</option>
