@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import getCurrentDate from "../funcs/getCurrentDate";
+import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function AddKridi() {
   const [date, setDate] = useState(getCurrentDate());
 
+  useDocumentTitle("Ajouter Kridis");
 
   return (
     <div className="">

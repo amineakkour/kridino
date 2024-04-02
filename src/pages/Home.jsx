@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import Cards from "../components/Home/Cards";
 import { NavIndContext } from "../components/NavContextProvider";
+import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function Home(){
   const [, setNavItem] = NavIndContext();
+
+  useDocumentTitle("Accuiel");
 
   return(
     <div className="my-6">

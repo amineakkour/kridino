@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import { NavIndContext } from "../components/NavContextProvider";
+import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function AddClient() {
   const [fullName, setFullName] = useState("");
@@ -9,6 +10,8 @@ export default function AddClient() {
   const [phone, setPhone] = useState("");
   const fullNameEl = useRef(0)
   const [, setNavInd] = NavIndContext();
+
+  useDocumentTitle("Ajouter Clients");
 
   useEffect(() => {
     fullNameEl.current.focus();
