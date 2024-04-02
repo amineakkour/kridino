@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link {
+  @apply text-stone-900 text-sm hover:font-medium min-w-14 text-center;
+}
+
+.link.active {
+  @apply font-medium
+}
+
+.item-amount{
+  @apply bg-gray-300 px-1 rounded text-xs font-medium;
+}
+
+.input{
+  @apply text-sm py-1 px-2 rounded-sm outline-none focus:ring-2 focus:ring-blue-300 text-sm py-1 px-2 rounded-sm outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+.primary-btn{
+  @apply bg-blue-400 text-stone-800 py-1 px-2 rounded text-sm hover:bg-blue-500 hover:text-stone-900;
+}
+
+.stone-btn{
+  @apply bg-gray-700 text-gray-200 py-1 px-2 rounded my-2 text-sm hover:bg-gray-800 hover:text-gray-100
+}
