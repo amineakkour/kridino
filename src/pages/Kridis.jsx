@@ -3,7 +3,12 @@ import useDocumentTitle from "../funcs/usePageTitle";
 function Kridi() {
   useDocumentTitle("Kridis");
   return (
-    <div>Kridi</div>
+    <div>
+      <h1>Krids</h1>
+      <div>
+        <a href="#">Add Kridi</a>
+      </div>
+    </div>
   )
 }
 
