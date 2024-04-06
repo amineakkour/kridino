@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"
-import { NavIndContext } from "./NavContextProvider";
+import { NavIndContext } from "../context/NavContextProvider";
 
-function DropDown({items, isDown, setIsDown}){
+function DropDown({items, isActive, setisActive}){
 
   return (
-    <>
-      <button onClick={() => setIsDown(v => !v)}>Ajouter</button>
-      <ul className={`${isDown ? "block" : "hidden"} absolute`}>
+    <div className={`${isActive ? "border-t border-r border-gray-100 rounded-sm" : ""} relative`}>
+      <button onClick={() => setisActive(v => !v)} className=""><i className="fa-solid fa-chevron-down"></i> Ajouter</button>
+      <ul className={`${isActive ? "block" : "hidden"} absolute bg-gray-100 w-full`}>
         {items.map((item, ind) => {  
           return <li key={ind}>
-            <Link onClick={() => setIsDown(false)} className="font-normal hover:font-medium border-b link block" to={item.path}>{item.name}</Link>
+            <Link onClick={() => setisActive(false)} className="font-normal hover:font-medium border-b link block" to={item.path}>{item.name}</Link>
             </li>
         })}
       </ul>
-    </>
+    </div>
   )
 }
 
 export default function Header(){
-  const [isDown, setIsDown] = useState(false); //for dropDown
+  const [isActive, setisActive] = useState(false); //for dropDown
   const [activeItem, setActiveItem] = NavIndContext(); //it's an index & default is null;
 
   const navListItems = [
@@ -45,9 +45,9 @@ export default function Header(){
                 {
                   item.dropDown 
                   ? 
-                  <DropDown items={item.dropDown} key={ind} isDown={isDown} setIsDown={setIsDown} />
+                  <DropDown items={item.dropDown} key={ind} isActive={isActive} setisActive={setisActive} />
                   :
-                  <Link onClick={() => setIsDown(false)} to={`${item.path}`}>{item.name}</Link>
+                  <Link onClick={() => setisActive(false)} to={`${item.path}`}>{item.name}</Link>
                 }
               </li>
           )

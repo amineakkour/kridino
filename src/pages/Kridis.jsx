@@ -1,4 +1,5 @@
 import useDocumentTitle from "../funcs/usePageTitle";
+import React from "react";
 
 function Kridi() {
   useDocumentTitle("Kridis");

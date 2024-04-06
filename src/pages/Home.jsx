@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Cards from "../components/Home/Cards";
-import { NavIndContext } from "../components/NavContextProvider";
+import { NavIndContext } from "../context/NavContextProvider";
 import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function Home(){

@@ -15,7 +15,7 @@
 }
 
 .input{
-  @apply text-sm py-1 px-2 rounded-sm outline-none focus:ring-2 focus:ring-blue-300 text-sm py-1 px-2 rounded-sm outline-none focus:ring-2 focus:ring-blue-300;
+  @apply text-sm py-1 px-2 rounded-sm outline-none focus:ring-2 focus:ring-blue-300;
 }
 
 .primary-btn{

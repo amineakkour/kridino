@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react"
 import { Link } from "react-router-dom";
-import { NavIndContext } from "../components/NavContextProvider";
+import { NavIndContext } from "../context/NavContextProvider";
 import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function AddClient() {
