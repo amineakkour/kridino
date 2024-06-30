@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
-import getCurrentDate from "../funcs/getCurrentDate";
 import useDocumentTitle from "../funcs/usePageTitle";
 
 export default function AddKridi() {
   const [name, setName] = useState("");
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(100);
-  const [date, setDate] = useState(getCurrentDate());
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0])
   const [client, setClient] = useState(0);
   const [items, setItems] = useState([]);
 
@@ -16,7 +15,6 @@ export default function AddKridi() {
     setName("");
     setCount(1);
     setPrice(100);
-    setDate(getCurrentDate());
     setClient(0);
   }
 
@@ -68,7 +66,7 @@ export default function AddKridi() {
         <div className="grid grid-cols-[1fr_1fr] grid-rows-1 gap-2 my-2">
           <div>
             <label htmlFor="name" className="block text-sm text-gray-700">Date du Kridi</label>
-            <input type="date" id="name" className="input w-full" value={date} onChange={e => setDate(e.target.value)} />
+            <input type="date" id="name" className="input w-full" defaultValue={date} onChange={e => setDate(e.target.value)} />
           </div>
 
           <div>

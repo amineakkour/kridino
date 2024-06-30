@@ -5,7 +5,7 @@ import { NavIndContext } from "../context/NavContextProvider";
 function DropDown({items, isActive, setisActive}){
 
   return (
-    <div className={`${isActive ? "border-t border-r border-gray-100 rounded-sm" : ""} relative`}>
+    <div className={`relative`}>
       <button onClick={() => setisActive(v => !v)} className=""><i className="fa-solid fa-chevron-down"></i> Ajouter</button>
       <ul className={`${isActive ? "block" : "hidden"} absolute bg-gray-100 w-full`}>
         {items.map((item, ind) => {  
@@ -35,13 +35,16 @@ export default function Header(){
   ];
 
   return(
-    <nav className="flex justify-between aligns-center">
-      <div id="logo" className="font-medium">kridino</div>
+    <nav >
+      <div className="flex justify-center aligns-center">
 
-      <ul className="flex gap-2 text-sm">
+      <div id="logo" className="font-bold text-lg">kridino</div>
+      </div >
+
+      <ul className="flex text-sm justify-between items-center mt-5">
         {navListItems.map((item, ind) => {
           return (
-              <li key={ind} onClick={() => setActiveItem(ind)} className={`link ${activeItem === ind ? "active" : ""}`}>
+              <li key={ind} onClick={() => setActiveItem(ind)} className={`w-1/4 ${ind !=0 && "border-l"} border-black   link ${activeItem === ind ? "active" : ""}`}>
                 {
                   item.dropDown 
                   ? 

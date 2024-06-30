@@ -38,7 +38,7 @@ export default function Clients() {
           type="text"
           className="outline-none focus:ring-2 focus:ring-blue-300 text-sm bg-[#F3F3F3] px-2 py-1 rounded-md w-full"
         placeholder="Rechercher des clients" />
-        <button className="bg-blue-500 p-2 rounded-md">Rechercher</button>
+        <button className="stone-btn h-full">Rechercher</button>
       </form>
 
       <div>
