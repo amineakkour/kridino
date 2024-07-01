@@ -5,6 +5,7 @@ import { NavIndContext } from "../context/NavContextProvider";
 
 function Client(){
   const [showMore, setShowMore] = useState(false);
+  const [, setActive] = NavIndContext();
 
   return (
   <div className="bg-gray-100 my-2 p-2 rounded-sm">
@@ -25,13 +26,10 @@ function Client(){
 
 export default function Clients() {
   useDocumentTitle("Clients");
-  const [, setNavItem] = NavIndContext();
 
   return (
     <div className="text-sm my-6">
-      <div className="flex justify-end">
-        <Link onClick={() => setNavItem(1)} to="/clients/ajouter" className="link w-24 block">Ajouter clients</Link>
-      </div>
+      <div className="flex justify-end borde"><Link onClick={() => setActive(1)} className="link w-24 block" to="/clients/ajouter">Ajouter clients</Link></div>
 
       <form className="flex gap-3 my-4">
         <input 
