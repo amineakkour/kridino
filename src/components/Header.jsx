@@ -18,33 +18,37 @@ function DropDown({items, isActive, setisActive}){
   )
 }
 
+const navListItems = [
+  { name: "Accuiel", path: "/" },
+  {
+    dropDown: [
+      {name: "client", path: "/clients/ajouter"},
+      {name: "kridi", path: "/kridis/ajouter"}
+    ]
+  },
+  { name: "Clients", path: "/clients" },
+  { name: "Kridis", path: "/kridis" },
+];
+
 export default function Header(){
   const [isActive, setisActive] = useState(false); //for dropDown
   const [activeItem, setActiveItem] = NavIndContext(); //it's an index & default is null;
 
-  const navListItems = [
-    { name: "Accuiel", path: "/" },
-    {
-      dropDown: [
-        {name: "client", path: "/clients/ajouter"},
-        {name: "kridi", path: "/kridis/ajouter"}
-      ]
-    },
-    { name: "Clients", path: "/clients" },
-    { name: "Kridis", path: "/kridis" },
-  ];
 
   return(
     <nav >
-      <div className="flex justify-center aligns-center">
-
-      <div id="logo" className="font-bold text-lg">kridino</div>
+      <div className="flex justify-between items-center px-5">
+        <h1 id="logo" className="font-bold text-lg">kridino</h1>
+        <a className="block group cursor-pointer px-5 relative">
+          <i class="fa-solid fa-user"></i>
+          <span className="block text-[9px] absolute opacity-0 group-hover:opacity-100 top-62 left-0">Déconnexion</span>
+        </a>
       </div >
 
       <ul className="flex text-sm justify-between items-center mt-5">
         {navListItems.map((item, ind) => {
           return (
-              <li key={ind} onClick={() => setActiveItem(ind)} className={`w-1/4 ${ind !=0 && "border-l"} border-black   link ${activeItem === ind ? "active" : ""}`}>
+              <li key={ind} onClick={() => setActiveItem(ind)} className={`w-1/4 ${ind !=0 && "border-l"} border-black link ${activeItem === ind ? "active" : ""}`}>
                 {
                   item.dropDown 
                   ? 

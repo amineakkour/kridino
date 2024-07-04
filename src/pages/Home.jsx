@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Cards from "../components/Home/Cards";
+import Card from "../components/Home/Card";
 import { NavIndContext } from "../context/NavContextProvider";
 import useDocumentTitle from "../funcs/usePageTitle";
 
@@ -15,7 +15,10 @@ export default function Home(){
         <li className="link inline-block"><Link to="/kridis" onClick={() => setNavItem(3)}>Afficher tous</Link></li>
       </div>
 
-      <Cards />
+      <div>
+        <Card />
+        <Card />
+      </div>
 
     </div>
   )

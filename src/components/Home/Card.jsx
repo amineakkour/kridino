@@ -1,4 +1,4 @@
-function Card() {
+export default function Card() {
   return (
     <div className="relative bg-gray-200 p-2 my-2 flex ">
       <p className="absolute right-2 text-sm text-gray-500"> 2023/03/20</p>
@@ -35,7 +35,7 @@ function Card() {
           <p>20DHS</p>
         </li>
         <div className="flex justify-between items-center">
-          <button className="stone-btn">Afficher Plus</button>
+          <button className="stone-btn my-2">Afficher Plus</button>
 
           <p className="border-top border-t border-gray-700 font-medium">
             
@@ -43,16 +43,6 @@ function Card() {
           </p>
         </div>
       </ul>
-    </div>
-  );
-}
-
-export default function Cards() {
-  return (
-    <div>
-      <Card />
-      <Card />
-      <Card />
     </div>
   );
 }

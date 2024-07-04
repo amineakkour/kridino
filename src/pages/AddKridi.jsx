@@ -80,7 +80,7 @@ export default function AddKridi() {
           </div>
         </div>
 
-        <button className="stone-btn">Ajouter Kridi</button>
+        <button className="stone-btn my-2">Ajouter Kridi</button>
       </form>
 
       <div>

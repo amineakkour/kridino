@@ -34,9 +34,9 @@ export default function Clients() {
       <form className="flex gap-3 my-4">
         <input 
           type="text"
-          className="outline-none focus:ring-2 focus:ring-blue-300 text-sm bg-[#F3F3F3] px-2 py-1 rounded-md w-full"
+          className="outline-none focus:ring-2 focus:ring-blue-300 text-sm bg-[#F3F3F3] px-2 py-2 rounded-sm w-full"
         placeholder="Rechercher des clients" />
-        <button className="stone-btn h-full">Rechercher</button>
+        <button className="stone-btn block">Rechercher</button>
       </form>
 
       <div>

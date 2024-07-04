@@ -69,7 +69,7 @@ export default function AddClient() {
         />
         </div>
 
-        <button className="stone-btn" type="submit">Ajouter</button>
+        <button className="stone-btn my-2" type="submit">Ajouter</button>
 
       </form>
 
